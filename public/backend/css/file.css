@@ -1,0 +1,660 @@
+body {
+    background: #2c3b4d;
+}
+.engine-file-manager {
+    width: 100%;
+    border-radius: 0;
+    background: #2d3b4d;
+    border: none;
+    height: 100vh;
+}
+.engine-tree .nav:before,
+.engine-tree .nav:after
+{
+    display: none;
+}
+.engine-tree ul.nav.dx-hc
+{
+    display: none;
+}
+.engine-tree > ul.nav ul.nav
+{
+    margin: 0.2em 2em;
+    overflow-y: hidden;
+}
+.engine-tree span.image
+{
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    line-height: 1;
+}
+.engine-tree ul.nav > li > a > span.image:not(:last-child),
+.engine-tree ul.nav > li > a > .badge > span.image:not(:last-child),
+.engine-tree ul.nav > li > a > span.expand-btn:not(:last-child),
+.engine-tree ul.nav > li > a > span.node-lp:not(:last-child)
+{
+    padding: 0.4em;
+    margin: -0.4em;
+    margin-right: 0;
+}
+.engine-tree > ul.nav > li > a > span.expand-btn.invisible
+{
+    color: transparent;
+}
+.engine-tree .node-lp.dx-hc,
+.engine-tree .expand-btn.dx-hc
+{
+    display: none;
+}
+.engine-tree .card-body:before,
+.engine-tree .card-body:after
+{
+    display: none;
+}
+.engine-tree .node-lp
+{
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.engine-tree.checkable li
+{
+    position: relative;
+}
+.engine-tree.checkable .form-check,
+.engine-tree.checkable .form-check:hover
+{
+    position: absolute;
+    background: none;
+    border: 0;
+    pointer-events: none;
+}
+.engine-tree.checkable .form-check.e,
+.engine-tree.checkable .form-check.i
+{
+    margin-left: 1.4em;
+}
+.engine-tree.checkable .form-check.i.e
+{
+    margin-left: 2.8em;
+}
+.engine-tree.checkable .form-check > input
+{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -1px;
+    vertical-align: middle;
+    pointer-events: initial;
+}
+.engine-tree.checkable ul.nav > li > a > span:not(.expand-btn):not(.image):not(.badge)
+{
+    margin-left: 1.4em;
+}
+
+.engine-file-manager:focus
+{
+    outline: none;
+}
+.engine-file-manager.card,
+.engine-file-manager > .card-body > .row > .card
+{
+    display: flex;
+    display: -ms-flexbox;
+    flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    margin-bottom: 0;
+}
+.engine-file-manager > .card-body,
+.engine-file-manager > .card-body > .row
+{
+    display: flex;
+    display: -ms-flexbox;
+    flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+}
+.engine-file-manager > .card-body
+{
+    min-height: 0px;
+}
+.engine-file-manager > .card-body > .row
+{
+    max-width: 100%;
+}
+.engine-file-manager > .card-body > .row > .engine-folder-container
+{
+    flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+}
+.engine-file-manager > .card-body > .row > .card
+{
+    flex: 1 1 0px;
+    -ms-flex: 1 1 0px;
+}
+.engine-file-manager > .card-body > .row > .card > .card-body
+{
+    flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+}
+.engine-file-manager > .card-body > .row > .card > .card-header,
+.engine-file-manager > .card-body > .row > .card > .card-footer
+{
+    flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+}
+.engine-file-manager > .card-header
+{
+    background: none;
+    overflow: visible;
+}
+.engine-file-manager > .card-body
+{
+    padding: 0;
+    overflow: hidden;
+}
+.engine-file-manager > .card-body > .row
+{
+    margin: 0;
+    position: relative;
+}
+.engine-file-manager .engine-toolbar-adaptive .engine-toolbar-search-group
+{
+    margin-left: auto;
+    order: 100;
+}
+.engine-fm-filter-shown
+{
+    position: relative;
+    overflow: hidden;
+}
+.engine-fm-filter-shown > .btn-toolbar
+{
+    visibility: hidden;
+}
+.engine-fm-filter-shown > .engine-dm.engine-ta-rs.dropdown-menu
+{
+    visibility: visible !important;
+    position: static !important;
+    display: block !important;
+}
+.engine-fm-filter-shown > .engine-dm.engine-ta-rs.dropdown-menu .engine-fm-filterbox.engine-hl
+{
+    visibility: visible !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding: 0 !important;
+}
+.engine-file-manager .engine-fm-pathbox .engine-textbox .col-form-label,
+.engine-file-manager .engine-fm-pathbox .engine-textbox > div
+{
+    display: table-cell;
+}
+.engine-file-manager .engine-fm-pathbox .engine-textbox .col-form-label
+{
+    padding-right: 0.5rem;
+}
+.engine-file-manager .engine-fm-toolbar .engine-fm-toolbar-am .disabled
+{
+    pointer-events: none;
+}
+.engine-file-manager .engine-folder-container
+{
+    padding: 0.75rem 0;
+    overflow: auto;
+    max-height: 100%;
+}
+.engine-file-manager .engine-folder-container:not(.engine-folder-container-max)
+{
+    max-width: 50%;
+    display: flex;
+    display: -ms-flexbox;
+}
+.engine-file-manager .engine-folder-container .engine-tree
+{
+    white-space: nowrap;
+}
+.engine-file-manager .engine-tree > ul.nav
+{
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+}
+.engine-file-manager .engine-tree ul.nav ul.nav
+{
+    margin-right: 0;
+    width: 250px;
+}
+.engine-file-manager .engine-tree ul.nav ul.nav li
+{
+    max-width: 100%;
+}
+.engine-file-manager .engine-tree ul.nav ul.nav li.selected {
+    background: #475463;
+    border-radius: 5px;
+}
+.engine-file-manager .engine-tree ul.nav > li:not(.active) > a:not(.active):not(.disabled)
+{
+    color: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.engine-file-manager .engine-folder-container.engine-folder-container-max
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    z-index: 1;
+}
+.engine-file-manager .engine-folder-container.engine-folder-container-max ~ div
+{
+    visibility: hidden;
+}
+.engine-file-manager > .card-body > .row > .card
+{
+    padding: 0;
+    border-radius: 0;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    max-height: 100%;
+    overflow: hidden;
+}
+.engine-file-manager > .card-body > .row > .d-none + .card
+{
+    border-left: none;
+}
+.engine-file-manager > .card-body > .row > .card > .card-header,
+.engine-file-manager > .card-body > .row > .card > .card-footer
+{
+    background: none;
+}
+.engine-file-manager > .card-body > .row > .card > .card-body > .row
+{
+    margin: 0;
+    position: relative;
+}
+.engine-file-manager .engine-details-container
+{
+    padding: 0;
+}
+.engine-file-manager .engine-details-container .engine-gridview,
+.engine-file-manager .engine-details-container .engine-gridview:focus
+{
+    outline: none;
+}
+.engine-file-manager .engine-details-container .engine-gridview > .card
+{
+    background: none;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+.engine-file-manager .engine-details-container .engine-gridview > .card > .dxgvCSD
+{
+    border-bottom: none;
+}
+.engine-file-manager .engine-details-container .engine-gridview .dxgvArm > th:last-child
+{
+    border-right: 0;
+}
+.engine-file-manager .engine-details-container .engine-gridview > .card .engine-table > thead > tr > th.engine-cmd-cell > .engine-cmd-cb,
+.engine-file-manager .engine-details-container .engine-gridview > .card .engine-table > tbody > tr > td.engine-cmd-cell > .engine-cmd-cb
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+.engine-file-manager .engine-details-container .engine-gridview > .card .engine-table > tbody > tr > td:not(.dxfm-fileThumb)
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.engine-file-manager .engine-details-container .engine-gridview .dxfm-fileName > .mark,
+.engine-file-manager .engine-file-container .engine-fm-item-title > .mark
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+.engine-file-manager .engine-file-container:not(.engine-details-container)
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.engine-file-manager .engine-file-container.engine-details-container
+{
+    /*overflow-y: auto;
+overflow-x: auto;*/
+}
+.engine-file-manager .engine-file-container .row > div:not(.engine-fm-page-indent)
+{
+    padding: 0 0.25rem 0.5rem;
+    position: relative;
+}
+.engine-file-manager .engine-file-container .engine-fm-item
+{
+    padding: 0.25rem 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.engine-file-manager .engine-file-container .engine-fm-item:not(.engine-fm-focus)
+{
+    border-color: transparent !important;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .image
+{
+    width: 100%;
+    height: 62px;
+    margin: 5px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .delete
+{
+   position: absolute;
+   background: white;
+   width: 24px;
+   height: 24px;
+   right: 0;
+   top: 0;
+   border-radius: 12px;
+   display: none;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .delete svg {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px;
+}
+.engine-file-manager .engine-file-container .engine-fm-item:hover .delete
+{
+   display: block;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .form-check
+{
+    visibility: hidden;
+    margin: 0;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .form-check input
+{width: 16px;height: 16px;}
+.engine-file-manager .engine-file-container .engine-fm-item:hover .form-check
+{
+    /* visibility: visible; */
+}
+.engine-file-manager .engine-file-container .engine-fm-item:not(.dxfm-filterViewRow) .form-check
+{
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.engine-file-manager .engine-file-container .engine-fm-item .form-check input,
+.engine-file-manager .engine-file-container .engine-fm-item .form-check input:before,
+.engine-file-manager .engine-file-container .engine-fm-item .form-check input:after,
+.engine-file-manager .engine-file-container .engine-fm-details .engine-cmd-cb.form-check input,
+.engine-file-manager .engine-file-container .engine-fm-details .engine-cmd-cb.form-check input:before,
+.engine-file-manager .engine-file-container .engine-fm-details .engine-cmd-cb.form-check input:after
+{
+    color: inherit;
+    border-color: currentColor;
+}
+.engine-file-manager .engine-file-container .engine-fm-item.dxfm-filterViewRow .form-check,
+.engine-file-manager .engine-file-container .engine-fm-item.engine-fm-select-active .form-check,
+.engine-file-manager .engine-file-container .engine-fm-item.engine-fm-select-inactive .form-check,
+.engine-file-manager .engine-file-container .engine-fm-item.engine-fm-hover .form-check,
+.engine-file-manager .engine-file-container .engine-fm-item.engine-fm-focus .form-check
+{
+    visibility: visible;
+}
+.engine-file-manager .engine-folder-container .engine-fm-select-inactive:not(:hover),
+.engine-file-manager .engine-file-container tr.engine-fm-select-inactive > td
+{
+    position: relative;
+}
+.engine-file-manager .engine-file-container .engine-fm-select-inactive:not(.dxfm-filterViewRow):not(tr):not(.engine-fm-hover),
+.engine-file-manager .engine-file-container .engine-fm-hover:not(.dxfm-filterViewRow):not(.engine-fm-select-active):not(.engine-fm-select-inactive)
+{
+    position: static;
+}
+.engine-file-manager .engine-file-container .engine-fm-select-inactive:not(.dxfm-filterViewRow):not(tr):not(.engine-fm-hover) .form-check,
+.engine-file-manager .engine-file-container .engine-fm-hover:not(.dxfm-filterViewRow):not(.engine-fm-select-active):not(.engine-fm-select-inactive) .form-check
+{
+    left: 0.5rem;
+    border: inherit;
+    border-color: transparent;
+    border-image: none;
+}
+.engine-file-manager .engine-folder-container .engine-fm-select-inactive:not(:hover):before,
+.engine-file-manager .engine-file-container .engine-fm-select-inactive:not(tr):not(.engine-fm-hover):before,
+.engine-file-manager .engine-file-container tr.engine-fm-select-inactive > td:before,
+.engine-file-manager .engine-file-container .engine-fm-hover:not(.engine-fm-select-active):not(.engine-fm-select-inactive):before
+{
+    content: ' ';
+    position: absolute;
+    background-color: #fff;
+    border-radius: inherit;
+    opacity: .2;
+}
+.engine-file-manager .engine-folder-container .engine-fm-select-inactive:not(:hover):before,
+.engine-file-manager .engine-file-container .engine-fm-select-inactive.dxfm-filterViewRow:before,
+.engine-file-manager .engine-file-container tr.engine-fm-select-inactive > td:before
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.engine-file-manager .engine-file-container .engine-fm-select-inactive:not(.dxfm-filterViewRow):not(tr):not(.engine-fm-hover):before,
+.engine-file-manager .engine-file-container .engine-fm-hover:not(.dxfm-filterViewRow):not(.engine-fm-select-active):not(.engine-fm-select-inactive):before
+{
+    left: 0.25rem;
+    top: 0;
+    width: calc(100% - 0.5rem);
+    height: calc(100% - 0.5rem);
+}
+.engine-file-manager .engine-file-container .engine-fm-item > .engine-fm-item-thumbnail
+{
+    font-size: 3rem;
+}
+.engine-file-manager .engine-file-container .engine-fm-item > .engine-fm-item-title
+{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.engine-file-manager .engine-file-container .engine-fm-item > img
+{
+    vertical-align: baseline;
+    height: 48px;
+    width: 48px;
+    margin: 9px 0;
+}
+.engine-file-manager .engine-fm-breadcrumb
+{
+    padding: 0;
+    margin: 0;
+}
+.engine-file-manager .engine-fm-breadcrumb .breadcrumb
+{
+    margin: 0;
+    background: none;
+    border-radius: 0;
+}
+.engine-file-manager .engine-fm-breadcrumb li
+{
+    white-space: nowrap;
+}
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn:not(.active)
+{
+    cursor: pointer;
+}
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn:not(.dropdown)
+{
+    padding-right: 0.5rem;
+}
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn:not(.dropdown) + li,
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn.d-none.dropdown + li
+{
+    padding-left: 0;
+}
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn:before,
+.engine-file-manager .engine-fm-breadcrumb .engine-fm-breadcrumb-btn.d-none + li:not(.engine-fm-breadcrumb-btn):before
+{
+    content: "";
+    padding-left: 0;
+}
+.engine-file-manager .engine-fm-breadcrumb .dropdown-menu
+{
+    display: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    min-width: 0;
+}
+.engine-file-manager .engine-fm-upload-panel
+{
+    display: flex;
+    display: -ms-flexbox;
+    flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    justify-content: flex-end;
+    -ms-flex-pack: end;
+    align-items: flex-start;
+    -ms-flex-align: start;
+}
+.engine-file-manager .engine-fm-upload-panel .engine-uc
+{
+    align-self: center;
+    -ms-flex-item-align: center;
+}
+.engine-file-manager .engine-fm-upload-panel .engine-uc .engine-inputs,
+.engine-file-manager .engine-fm-upload-panel .engine-uc div[id*="_ProgressPanel"]
+{
+    display: inline-table;
+}
+.engine-file-manager .engine-fm-upload-panel .engine-uc div[id*="_ProgressPanel"] .progress
+{
+    margin: 0;
+}
+.engine-file-manager .engine-fm-upload-panel .engine-uc .engine-inputs > div,
+.engine-file-manager .engine-fm-upload-panel .engine-uc div[id*="_ProgressPanel"] > div
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+.engine-file-manager .engine-fm-page-indent
+{
+    height: 0px;
+    padding: 0;
+    margin: 0;
+    border: 0px none;
+    clear: both;
+}
+.engine-file-manager .engine-fm-renamebox.form-control,
+.engine-file-manager .engine-fm-createbox.form-control
+{
+    display: inline-block;
+    border-radius: 0;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.engine-file-manager .engine-fm-modal-uploading .modal-body
+{
+    text-align: right;
+}
+.engine-file-manager .engine-fm-modal-uploading .modal-body .form-control-plaintext
+{
+    display: block;
+}
+.engine-file-manager .engine-fm-modal-uploading .modal-body .form-control-plaintext,
+.engine-file-manager .engine-fm-modal-uploading .modal-body .engine-progress
+{
+    text-align: left;
+}
+.engine-file-manager .engine-fm-modal-uploading .engine-fm-modal-btn[data-toggle="cancel"]
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+.engine-file-manager .dxfm-filterViewRow
+{
+    display: flex;
+    display: -ms-flexbox;
+    flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    width: 100%;
+    border: none !important;
+}
+.engine-file-manager .engine-file-container .row > div.engine-fm-item.dxfm-filterViewRow
+{
+    padding: 0.5rem;
+}
+.engine-file-manager .dxfm-filterViewRow:not(:last-of-type)
+{
+    margin-bottom: 0.5rem;
+}
+.engine-file-manager .dxfm-filterViewRow > div
+{
+    display: block;
+    flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    width: auto;
+}
+.engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewImageCell
+{
+    flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+}
+.engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewCheckBoxCell
+{
+    align-self: center;
+    -ms-flex-item-align: center;
+}
+@media (max-width: 991.98px)
+{
+    .engine-file-manager .dxfm-filterViewRow span.dxfm-fvtt
+    {
+        display: block;
+    }
+}
+@media (min-width: 576px)
+{
+    .engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewFileNameCell
+    {
+        flex: 1 0 40%;
+        -ms-flex: 1 0 40%;
+    }
+    .engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewDateCell
+    {
+        flex: 1 0 30%;
+        -ms-flex: 1 0 30%;
+    }
+}
+@media (max-width: 575.98px)
+{
+    .engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewDateCell,
+    .engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewSizeCell
+    {
+        display: none;
+    }
+    .engine-file-manager .dxfm-filterViewRow > div.dxfm-filterViewFileNameCell
+    {
+        flex: 1 1 100%;
+        -ms-flex: 1 1 100%;
+    }
+}
+.engine-file-manager .dxfm-filterViewRow .mark
+{
+    padding-left: 0;
+    padding-right: 0;
+}

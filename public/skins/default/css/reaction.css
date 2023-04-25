@@ -1,0 +1,161 @@
+.label-reactions {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #65676b;
+    font-size: 12px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    display: initial;
+}
+[class*="reaction-"], .field-reactions {
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+}
+
+.reactions-box {
+    position: absolute;
+    left: -120px;
+    top: -52px;
+    z-index: 2;
+    display: flex;
+    padding: 1px 0;
+    visibility: hidden;
+    min-width: 300px;
+    justify-content: space-between;
+}
+.label-reactions:hover .reactions-box {
+    visibility: visible;
+}
+
+.reactions-toolbox {
+    background: #fff;
+    height: 52px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    border-radius: 40px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s;
+    
+}
+.label-reactions:hover .reactions-toolbox {
+    animation: .5s fadeIn;
+  animation-fill-mode: forwards;
+    visibility: visible;
+
+}
+
+.label-reactions:hover [class*="reaction-"] {
+    clip: auto;
+    overflow: visible;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.label-reactions:hover [class*="reaction-"] {
+        animation: 1s scaleIn;
+        animation-fill-mode: forwards;
+
+}
+.label-reactions:hover [class*="reaction-"]:hover {
+    transition: all 0.2s ease-in;
+    transform: scale(1) translateY(-14px);
+}
+.label-reactions:hover [class*="reaction-"]:hover .legend-reaction {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+  99% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+      opacity: 1;
+    visibility: visible;
+
+  }
+}
+
+@keyframes scaleIn {
+  50% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.2) translateY(-6px);
+
+  } 
+  100% {
+      opacity: 1;
+    visibility: visible;
+    transform: scale(0.8) translateY(-6px);
+
+  }
+}
+
+[class*="reaction-"] {
+    border: none;
+    background-color: transparent;
+    display: block;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    z-index: 11;
+    transform-origin: 50% 100%;
+    transform: scale(0.1);
+    transition: all 0.3s;
+    outline: none;
+    will-change: transform;
+    opacity: 0;
+    padding: 0;
+}
+[class*="reaction-"] img {
+    height: 100%;
+    box-shadow: none !important;
+    padding: 0;
+    margin: auto;
+}
+
+.legend-reaction {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    line-height: 20px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 8px;
+    transition: opacity 50ms ease;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: -28px;
+    transform: translateX(-50%);
+}
+.label-reactions[data-reacted="true"][data-reaction-type="sad"] {
+    color: rgb(247, 177, 37) !important;
+}
+.label-reactions[data-reacted="true"][data-reaction-type="like"] {
+    color: rgb(32, 120, 244) !important;
+}
+.label-reactions[data-reacted="true"][data-reaction-type="wow"] {
+    color: rgb(247, 177, 37) !important;
+}
+.label-reactions[data-reacted="true"][data-reaction-type="haha"] {
+    color: rgb(247, 177, 37) !important;
+}
+.label-reactions[data-reacted="true"][data-reaction-type="angry"]{
+    color: rgb(233, 113, 15) !important;
+}
+.label-reactions[data-reacted="true"][data-reaction-type="love"] {
+    color: rgb(243, 62, 88) !important;
+}
